@@ -233,9 +233,38 @@ while(i++<10){
 //-------------------------------------------------
 console.log("objects ----------------");
 
+//string:
+name = "John";
+const message = "Hi " + name + ',\n ...';
+const anotherMessage =
+`
+Hi ${name},
+Thank you for...
+
+Regards
+Tomas.
+`;
+
+console.log(message);
+console.log(anotherMessage);
 
 
+//getters and setters:
 
+person = {
+    firstName: "Tomas",
+    lastName: "Pesek",
+    get fullName(){
+        return `${person.firstName} ${person.lastName}`
+    },
+    set fullName(value){
+        const parts = value.split(' ');
+        this.firstName = parts[0];
+        this.lastName = parts[1];
+    }
+};
+person.fullName = 'John Smith';
+console.log(person);
 
 
 
